@@ -3,7 +3,7 @@ import ChefTitle from "./_components/ChefTitle";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <ChefTitle>Chef Jen 👩🏼‍🍳</ChefTitle>
       <ChefArticle>
         Welcome to Chef de partie 🥳 Jen&apos;s kitchen to share with you some
@@ -13,6 +13,6 @@ export default function Home() {
         Feast your 👀 on these simple but satisfying meals whilst on any weight
         💪 loss programme.
       </ChefArticle>
-    </div>
+    </>
   );
 }
