@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Desserts",
 };
 
-export const fakeDesserts = [
+const fakeDesserts = [
   {
     name: "Hidden Goodness Chocolate Buns",
     ingredients: "10g chia seeds, 2 eggs, blah",
