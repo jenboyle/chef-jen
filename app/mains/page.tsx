@@ -11,6 +11,7 @@ const fakeMains = [
     name: "Low Points Slow Cooked Curry",
     ingredients: "Curry powder, chicken, blah",
     method: "todo",
+    img: "https://qhlvgfbmjzraangtbtqq.supabase.co/storage/v1/object/public/recipeimages/curry.png",
   },
   {
     name: "Slow cooked gravy",

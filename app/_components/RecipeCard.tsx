@@ -1,7 +1,10 @@
+import Image from "next/image";
+
 export type recipeType = {
   name: string;
   ingredients: string;
   method: string;
+  img?: string;
 };
 
 interface RecipeProps {
@@ -16,6 +19,9 @@ function RecipeCard({ recipes }: RecipeProps) {
         Ingredients: {recipe.ingredients}
       </h3>
       <h4 className="text-lg mb-8">Method: {recipe.method}</h4>
+      {recipe.img ? (
+        <Image src={recipe.img} height="130" width="184" alt="temp"></Image>
+      ) : null}
     </div>
   ));
 }
