@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { Nunito_Sans } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import Header from "./_components/Header";
 
 export const metadata: Metadata = {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "Devine recipes by Chef Jen",
 };
 
-const nunito = Nunito_Sans({
+const opensans = Open_Sans({
   subsets: ["latin"],
 
   display: "swap",
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${nunito.className} bg-green-200 text-stone-800 flex flex-col min-h-screen`}
+        className={`${opensans.className} bg-green-200 text-stone-800 flex flex-col min-h-screen`}
       >
         <Header />
         <div className="flex-1 px-5 py-6">
