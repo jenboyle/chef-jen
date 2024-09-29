@@ -13,6 +13,7 @@ const fakeStarters = [
       "Carrots, onion, coriander-cumin-mild chilli powders, 150g dried red lentils, stock cube",
     method:
       "Put hot stock in a soup maker, Peel and chop carrots and onion, wash lentils and add all to the soup maker for smooth soup",
+    img: "https://qhlvgfbmjzraangtbtqq.supabase.co/storage/v1/object/public/recipeimages/carrotsoup.png",
     points: "7 for recipe",
   },
   {

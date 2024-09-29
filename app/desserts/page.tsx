@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import ChefTitle from "../_components/ChefTitle";
 import RecipeCard from "../_components/RecipeCard";
+import { getRecipes } from "../_lib/data-service";
 
 export const metadata: Metadata = {
   title: "Desserts",
@@ -45,7 +46,10 @@ const fakeDesserts = [
 //   method: "todo",
 // },
 
-function Page() {
+async function Page() {
+  const recipesFromsupa = await getRecipes("desserts");
+  console.log("here");
+  console.log(recipesFromsupa);
   return (
     <>
       <ChefTitle>Desserts 🍧</ChefTitle>

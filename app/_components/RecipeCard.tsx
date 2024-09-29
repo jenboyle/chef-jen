@@ -13,6 +13,8 @@ interface RecipeProps {
   recipes: recipeType[];
 }
 
+//or object-contain
+
 function RecipeCard({ recipes }: RecipeProps) {
   return recipes.map((recipe, index) => (
     <div className="bg-yellow-100" key={`${index} ${recipe.name}`}>
@@ -21,10 +23,17 @@ function RecipeCard({ recipes }: RecipeProps) {
         Ingredients: {recipe.ingredients}
       </h3>
       <h4 className="text-lg mb-8">Method: {recipe.method}</h4>
-
-      {recipe.img ? (
-        <Image src={recipe.img} height="130" width="184" alt="temp"></Image>
-      ) : null}
+      <div className="relative h-[130px]">
+        {recipe.img ? (
+          <Image
+            src={recipe.img}
+            className="object-left object-scale-down"
+            fill
+            alt="temp"
+            quality={90}
+          ></Image>
+        ) : null}
+      </div>
       {recipe.points ? (
         <h5 className="text-base my-2">Ww old skool points: {recipe.points}</h5>
       ) : null}
