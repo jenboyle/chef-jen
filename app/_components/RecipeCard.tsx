@@ -17,12 +17,14 @@ interface RecipeProps {
 
 function RecipeCard({ recipes }: RecipeProps) {
   return recipes.map((recipe, index) => (
-    <div className="bg-yellow-100" key={`${index} ${recipe.name}`}>
+    <div className="bg-yellow-100 p-2 m-4" key={`${index} ${recipe.name}`}>
       <h2 className="text-2xl my-5">{recipe.name}</h2>
       <h3 className="text-lg text-ellipsis mb-8">
-        Ingredients: {recipe.ingredients}
+        <span className="font-semibold">Ingredients:</span> {recipe.ingredients}
       </h3>
-      <h4 className="text-lg mb-8">Method: {recipe.method}</h4>
+      <h4 className="text-lg mb-8">
+        <span className="font-semibold">Method:</span> {recipe.method}
+      </h4>
       <div className="relative h-[130px]">
         {recipe.img ? (
           <Image
@@ -35,10 +37,15 @@ function RecipeCard({ recipes }: RecipeProps) {
         ) : null}
       </div>
       {recipe.points ? (
-        <h5 className="text-base my-2">Ww old skool points: {recipe.points}</h5>
+        <h5 className="text-base my-2">
+          <span className="font-semibold">Ww old skool points:</span>{" "}
+          {recipe.points}
+        </h5>
       ) : null}
       {recipe.calories ? (
-        <h6 className="text-base mb-8">Calories: {recipe.calories}</h6>
+        <h6 className="text-base mb-8">
+          <span className="font-semibold">Calories:</span> {recipe.calories}
+        </h6>
       ) : null}
     </div>
   ));
