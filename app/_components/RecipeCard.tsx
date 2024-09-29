@@ -1,4 +1,5 @@
 import Image from "next/image";
+import RecipeCardTools from "./RecipeCardTools";
 
 export type recipeType = {
   name: string;
@@ -47,6 +48,7 @@ function RecipeCard({ recipes }: RecipeProps) {
           <span className="font-semibold">Calories:</span> {recipe.calories}
         </h6>
       ) : null}
+      <RecipeCardTools />
     </div>
   ));
 }
