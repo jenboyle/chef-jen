@@ -48,11 +48,9 @@ const fakeDesserts = [
 
 async function Page() {
   const recipesFromsupa = await getRecipes("desserts");
-  console.log("here");
-  console.log(recipesFromsupa);
   return (
     <>
-      <ChefTitle>Desserts 🍧</ChefTitle>
+      <ChefTitle>Desserts 🍧 {recipesFromsupa[0].name} test</ChefTitle>
       <RecipeCard recipes={fakeDesserts} />
     </>
   );
