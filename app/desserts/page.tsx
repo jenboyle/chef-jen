@@ -47,11 +47,11 @@ export const metadata: Metadata = {
 // },
 
 async function Page() {
-  const recipesFromsupa = await getRecipes("desserts");
+  const recipes = await getRecipes("desserts");
   return (
     <>
       <ChefTitle>Desserts 🍧</ChefTitle>
-      <RecipeCard recipes={recipesFromsupa} />
+      <RecipeCard recipes={recipes} />
     </>
   );
 }
