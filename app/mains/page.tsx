@@ -9,21 +9,25 @@ export const metadata: Metadata = {
 const fakeMains = [
   {
     name: "Low Points Slow Cooked Curry",
-    ingredients: "Curry powder, chicken, blah",
-    method: "todo",
+    ingredients: "Curry powder sachet, chicken, mushrooms, onions, carrots",
+    method:
+      "Make up the curry powder to instructions, wash and chop the veg, place all in a slow cooker on high for about 6 hours",
     img: "https://qhlvgfbmjzraangtbtqq.supabase.co/storage/v1/object/public/recipeimages/curry.png",
   },
   {
-    name: "Slow cooked gravy",
-    ingredients: "40g gravy powder, blah",
-    method: "todo",
-  },
-  {
-    name: "Homemade fish and chips",
-    ingredients: "Fish, blah",
-    method: "todo",
+    name: "Slow Cooked Gravy Chicken",
+    ingredients:
+      "40g gravy powder, chicken, mushrooms, onion, 30g dry green lentils",
+    method:
+      "Make the gravy to instructions, wash and chop the veg and add all to the slow cooker.  Cook on high for about 6 hours",
   },
 ];
+
+// {
+//   name: "Homemade fish and chips",
+//   ingredients: "Fish, blah",
+//   method: "todo",
+// },
 
 function Page() {
   return (

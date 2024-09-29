@@ -9,18 +9,19 @@ export const metadata: Metadata = {
 const fakeStarters = [
   {
     name: "Carrot and Lentil Soup",
-    ingredients: "Carrots, red lentils, blah",
-    method: "todo",
+    ingredients:
+      "Carrots, onion, coriander-cumin-mild chilli powders, 150g dried red lentils, stock cube",
+    method:
+      "Put hot stock in a soup maker, Peel and chop carrots and onion, wash lentils and add all to the soup maker for smooth soup",
+    points: "7 for recipe",
   },
   {
-    name: "Another Soup",
-    ingredients: "veg, blah",
-    method: "todo",
-  },
-  {
-    name: "Soup trio",
-    ingredients: "Peas, blah",
-    method: "todo",
+    name: "Spicy Lentil Soup",
+    ingredients:
+      "1 carton or tin 400g of chopped tomatoes, 1 chopped onion, 50g red lentils, 1/2 chopped chilli or hot chilli powder, stock",
+    method:
+      "Add all ingredients to a soup maker and have either smooth or chunky soup",
+    points: "4 for recipe",
   },
 ];
 
