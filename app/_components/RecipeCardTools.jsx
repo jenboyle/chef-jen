@@ -2,13 +2,13 @@ import EditNoteIcon from "@mui/icons-material/EditNote";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { IconButton } from "@mui/material";
 
-function RecipeCardTools() {
+function RecipeCardTools({ isDisabled }) {
   return (
     <span>
-      <IconButton disabled>
+      <IconButton disabled={isDisabled}>
         <EditNoteIcon />
       </IconButton>
-      <IconButton disabled>
+      <IconButton disabled={isDisabled}>
         <DeleteIcon />
       </IconButton>
     </span>

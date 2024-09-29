@@ -8,6 +8,7 @@ export type recipeType = {
   img?: string;
   points?: string;
   calories?: string;
+  readonly: boolean;
 };
 
 interface RecipeProps {
@@ -48,7 +49,7 @@ function RecipeCard({ recipes }: RecipeProps) {
           <span className="font-semibold">Calories:</span> {recipe.calories}
         </h6>
       ) : null}
-      <RecipeCardTools />
+      <RecipeCardTools isDisabled={recipe.readonly} />
     </div>
   ));
 }
