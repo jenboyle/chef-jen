@@ -1,5 +1,8 @@
+"use client";
 import Image from "next/image";
 import RecipeCardTools from "./RecipeCardTools";
+import { useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 export type recipeType = {
   name: string;
@@ -9,6 +12,7 @@ export type recipeType = {
   points?: string;
   calories?: string;
   readonly: boolean;
+  recipe_type: string;
 };
 
 interface RecipeProps {
@@ -18,8 +22,17 @@ interface RecipeProps {
 //or object-scale-down
 
 function RecipeCard({ recipes }: RecipeProps) {
+  useEffect(() => {
+    if (recipes[0].recipe_type === "desserts") {
+      toast(
+        "New recipes coming soon: Hidden Goodness Chocolate Buns🧁 and Spider🕷️ Biscuits",
+        { id: "dessertscomesoon" }
+      );
+    }
+  }, [recipes]);
   return recipes.map((recipe, index) => (
     <div className="bg-yellow-100 p-2 m-4" key={`${index} ${recipe.name}`}>
+      <Toaster />
       <h2 className="text-2xl my-5">{recipe.name}</h2>
       <h3 className="text-lg text-ellipsis mb-8 capitalize">
         <span className="font-semibold">Ingredients:</span> {recipe.ingredients}
