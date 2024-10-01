@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import RecipeCardTools from "./RecipeCardTools";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 export type recipeType = {
