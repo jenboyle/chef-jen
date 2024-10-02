@@ -1,4 +1,3 @@
-import Link from "next/link";
 import LunchDiningIcon from "@mui/icons-material/LunchDining";
 import IcecreamIcon from "@mui/icons-material/Icecream";
 import SoupKitchenIcon from "@mui/icons-material/SoupKitchen";
