@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${opensans.className} bg-green-200 text-stone-800 flex flex-col min-h-screen`}
+        className={`${opensans.className} bg-green-100 text-stone-800 flex flex-col min-h-screen`}
       >
         <Header />
         <div className="flex-1 px-5 py-6">

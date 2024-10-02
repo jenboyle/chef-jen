@@ -3,32 +3,33 @@ import LunchDiningIcon from "@mui/icons-material/LunchDining";
 import IcecreamIcon from "@mui/icons-material/Icecream";
 import SoupKitchenIcon from "@mui/icons-material/SoupKitchen";
 import StorefrontIcon from "@mui/icons-material/Storefront";
+import ChefNavLink from "./ChefNavLink";
 
 function Navigation() {
   return (
-    <ul className="bg-emerald-400 border-b-2 shadow-md z-50 fixed w-full flex justify-between items-center text-sm px-3">
+    <ul className="bg-emerald-200 border-b-2 shadow-md z-50 fixed w-full flex justify-between items-center text-sm px-3">
       <li>
-        <Link href="/" className="hover:bg-emerald-700">
+        <ChefNavLink href="/">
           👩🏼‍🍳 <StorefrontIcon />
-        </Link>
+        </ChefNavLink>
       </li>
       <li>
-        <Link href="/starters" className="hover:bg-emerald-700">
+        <ChefNavLink href="/starters">
           <SoupKitchenIcon />
           Starters
-        </Link>
+        </ChefNavLink>
       </li>
       <li>
-        <Link href="/mains" className="hover:bg-emerald-700">
+        <ChefNavLink href="/mains">
           <LunchDiningIcon />
           Mains
-        </Link>
+        </ChefNavLink>
       </li>
       <li>
-        <Link href="/desserts" className="hover:bg-emerald-700">
+        <ChefNavLink href="/desserts">
           <IcecreamIcon />
           Desserts
-        </Link>
+        </ChefNavLink>
       </li>
     </ul>
   );

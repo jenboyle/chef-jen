@@ -31,7 +31,10 @@ function RecipeCard({ recipes }: RecipeProps) {
     }
   }, [recipes]);
   return recipes.map((recipe, index) => (
-    <div className="bg-yellow-100 p-2 m-4" key={`${index} ${recipe.name}`}>
+    <div
+      className="bg-emerald-50 p-2 m-4 border border-stone-300"
+      key={`${index} ${recipe.name}`}
+    >
       <Toaster />
       <h2 className="text-2xl my-5">{recipe.name}</h2>
       <h3 className="text-lg text-ellipsis mb-8 capitalize">
