@@ -4,7 +4,7 @@ import PinIcon from "@mui/icons-material/Pin";
 
 function SideNavigation() {
   return (
-    <div className="row-span-full">
+    <div className="row-span-full bg-emerald-200 border-r-2 shadow-md">
       <ul>
         <li className="px-6 py-8">
           <ChefNavLink href="/">
