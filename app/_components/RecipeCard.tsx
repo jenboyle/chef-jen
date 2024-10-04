@@ -4,6 +4,10 @@ import RecipeCardTools from "./RecipeCardTools";
 import { useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
+export type userType = {
+  username: string;
+};
+
 export type recipeType = {
   name: string;
   ingredients: string;
@@ -13,6 +17,7 @@ export type recipeType = {
   calories?: string;
   readonly: boolean;
   recipe_type: string;
+  users: userType[];
 };
 
 interface RecipeProps {
@@ -64,6 +69,12 @@ function RecipeCard({ recipes }: RecipeProps) {
         <h6 className="text-base mb-8">
           <span className="font-semibold">Calories:</span> {recipe.calories}
         </h6>
+      ) : null}
+      {(recipe.users as unknown as userType)!.username ? (
+        <p className="text-base mb-2">
+          <span className="font-semibold">Created by:</span>{" "}
+          {(recipe.users as unknown as userType)!.username}
+        </p>
       ) : null}
       <RecipeCardTools isDisabled={recipe.readonly} />
     </div>

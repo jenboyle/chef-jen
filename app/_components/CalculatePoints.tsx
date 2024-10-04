@@ -32,22 +32,22 @@ function CalculatePoints() {
   //       </div>
 
   return (
-    <div className="my-8">
-      <label className="p-1">Calories:</label>
+    <div className="my-8 grid col-span-1">
+      <label className="p-1 font-semibold">Calories:</label>
       <input
         type="text"
         name="cal"
         placeholder="Enter calories"
         onChange={handleCals}
-        className="p-2 m-2"
+        className="p-2 m-2 font-semibold rounded-xl focus:outline-none hover:bg-blue-50 transition-colors duration-300 focus:ring focus:ring-emerald-300 focus:bg-blue-50 focus:ring-offset-2"
       ></input>
-      <label className="p-1">Saturated Fat:</label>
+      <label className="p-1 font-semibold">Saturated Fat:</label>
       <input
         type="text"
         name="satfat"
         placeholder="Enter saturated fat"
         onChange={handleSatFat}
-        className="p-2 m-2"
+        className="p-2 m-2 font-semibold rounded-xl focus:outline-none hover:bg-blue-50 transition-colors duration-300 focus:ring focus:ring-emerald-300 focus:bg-blue-50 focus:ring-offset-2"
       ></input>
       <div className="text-center p-10">
         <ChefButton handleClick={handleClick}>Calculate Points</ChefButton>
