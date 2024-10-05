@@ -1,5 +1,6 @@
 import ChefNavLink from "./ChefNavLink";
 import StorefrontIcon from "@mui/icons-material/Storefront";
+import PersonIcon from "@mui/icons-material/Person";
 import PinIcon from "@mui/icons-material/Pin";
 
 function SideNavigation() {
@@ -14,6 +15,11 @@ function SideNavigation() {
         <li className="px-6 py-8">
           <ChefNavLink href="/points">
             <PinIcon /> Points
+          </ChefNavLink>
+        </li>
+        <li className="px-6 py-8">
+          <ChefNavLink href="/login">
+            <PersonIcon /> Login
           </ChefNavLink>
         </li>
       </ul>
