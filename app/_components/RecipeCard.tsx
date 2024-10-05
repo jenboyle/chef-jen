@@ -13,8 +13,11 @@ export type recipeType = {
   ingredients: string;
   method: string;
   img?: string;
-  points?: string;
-  calories?: string;
+  points?: number;
+  points_per?: string;
+  calories?: number;
+  calories_per?: string;
+  serves?: number;
   readonly: boolean;
   recipe_type: string;
   users: userType[];
@@ -61,6 +64,7 @@ function RecipeCard({ recipes }: RecipeProps) {
       <div className="text-right mr-4">
         <input
           type="text"
+          name="search"
           placeholder="🔍 Search..."
           onChange={handleSearch}
           className="p-2 m-2 font-semibold rounded-xl focus:outline-none hover:bg-blue-50 transition-colors duration-300 focus:ring focus:ring-emerald-300 focus:bg-blue-50 focus:ring-offset-2"
@@ -92,14 +96,28 @@ function RecipeCard({ recipes }: RecipeProps) {
           </div>
           {recipe.points ? (
             <h5 className="text-base my-2">
-              <span className="font-semibold">Ww old 🏫 points:</span>{" "}
-              {recipe.points}
+              <span className="font-semibold">Ww old 🏫 points:</span>
+              <span>
+                {recipe.points} {recipe.points_per ? recipe.points_per : null}
+              </span>
             </h5>
           ) : null}
           {recipe.calories ? (
             <h6 className="text-base mb-8">
-              <span className="font-semibold">Calories:</span> {recipe.calories}
+              <span className="font-semibold">Calories: </span>
+              <span>
+                {recipe.calories}
+                {recipe.calories_per ? (
+                  <span> kcal for {recipe.calories_per}</span>
+                ) : null}
+              </span>
             </h6>
+          ) : null}
+          {recipe.serves ? (
+            <p className="text-base mb-2">
+              <span className="font-semibold">Serves:</span>
+              {recipe.serves}
+            </p>
           ) : null}
           {(recipe.users as unknown as userType)!.username ? (
             <p className="text-base mb-2">
