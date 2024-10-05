@@ -25,7 +25,7 @@ function HomeContent() {
         is 🔑 to keeping the diet on track!
       </ChefArticle>
       <div className="text-center p-10">
-        <ChefButtonLink href="/starters">Order Up👩🏼‍🍳</ChefButtonLink>
+        <ChefButtonLink href="/starters">Cook 👩🏼‍🍳</ChefButtonLink>
       </div>
     </>
   );

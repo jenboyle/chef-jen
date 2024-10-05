@@ -34,7 +34,7 @@ async function Page() {
   const recipes = await getRecipes("mains");
   return (
     <>
-      <ChefTitle>Mains 🍔</ChefTitle>
+      <ChefTitle>Mains 🍛</ChefTitle>
       <RecipeCard recipes={recipes} />
     </>
   );

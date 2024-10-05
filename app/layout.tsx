@@ -33,7 +33,7 @@ export default function RootLayout({
         <Header />
         <Toaster position="top-center" gutter={12} />
 
-        <div className="flex-1 px-4 py-5 grid h-dvh grid-cols-[10rem,1fr] grid-rows-[auto,1fr] mx-2 my-7 ">
+        <div className="flex-1 px-4 py-5 grid h-dvh grid-cols-[8rem,1fr] grid-rows-[auto,1fr] mx-2 my-7 ">
           <SideNavigation />
           <main className="max-w-7xl w-full mx-5">{children}</main>
         </div>
