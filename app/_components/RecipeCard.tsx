@@ -96,9 +96,12 @@ function RecipeCard({ recipes }: RecipeProps) {
           </div>
           {recipe.points ? (
             <h5 className="text-base my-2">
-              <span className="font-semibold">Ww old 🏫 points:</span>
+              <span className="font-semibold">Ww old 🏫 points: </span>
               <span>
-                {recipe.points} {recipe.points_per ? recipe.points_per : null}
+                {recipe.points}{" "}
+                {recipe.points_per ? (
+                  <span> per {recipe.points_per}</span>
+                ) : null}
               </span>
             </h5>
           ) : null}
