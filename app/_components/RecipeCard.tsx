@@ -13,6 +13,7 @@ export type recipeType = {
   ingredients: string;
   method: string;
   img?: string;
+  bg_img?: string;
   points?: number;
   points_per?: string;
   calories?: number;
@@ -59,6 +60,7 @@ function RecipeCard({ recipes }: RecipeProps) {
       setRecipesFiltered(recipes);
     }
   }
+  //className={`bg-cover bg-center h-screen bg-[url('${recipe.bg_img ? recipe.bg_img : ""}')]`}
   return (
     <>
       <div className="text-right mr-4">
@@ -72,9 +74,18 @@ function RecipeCard({ recipes }: RecipeProps) {
       </div>
       {recipesFiltered.map((recipe, index) => (
         <div
-          className="bg-emerald-50 p-2 m-4 border border-stone-300"
+          className="bg-emerald-50 p-2 m-4 border border-stone-300 relative"
           key={`${index} ${recipe.name}`}
         >
+          {recipe.bg_img ? (
+            <Image
+              src={recipe.bg_img}
+              className="opacity-10 object-cover"
+              fill
+              alt={recipe.name}
+              quality={70}
+            ></Image>
+          ) : null}
           <h2 className="text-2xl my-5">{recipe.name}</h2>
           <h3 className="text-lg text-ellipsis mb-8 capitalize">
             <span className="font-semibold">Ingredients:</span>{" "}
@@ -89,7 +100,7 @@ function RecipeCard({ recipes }: RecipeProps) {
                 src={recipe.img}
                 className="object-left object-contain"
                 fill
-                alt="temp"
+                alt={recipe.name}
                 quality={90}
               ></Image>
             ) : null}
@@ -111,7 +122,7 @@ function RecipeCard({ recipes }: RecipeProps) {
               <span>
                 {recipe.calories}
                 {recipe.calories_per ? (
-                  <span> kcal for {recipe.calories_per}</span>
+                  <span>kcal for {recipe.calories_per}</span>
                 ) : null}
               </span>
             </h6>
