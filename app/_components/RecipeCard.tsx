@@ -36,10 +36,9 @@ function RecipeCard({ recipes }: RecipeProps) {
   const [recipesFiltered, setRecipesFiltered] = useState(recipes);
   useEffect(() => {
     if (recipes[0].recipe_type === "desserts") {
-      toast(
-        "New recipes coming soon: Hidden Goodness Chocolate Buns🧁 and Spider🕷️ Biscuits",
-        { id: "dessertscomesoon" }
-      );
+      toast("New recipe coming soon: Spider🕷️ Biscuits", {
+        id: "dessertscomesoon",
+      });
     }
   }, [recipes]);
 
