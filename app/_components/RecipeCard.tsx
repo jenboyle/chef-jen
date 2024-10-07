@@ -21,6 +21,8 @@ export type recipeType = {
   serves?: number;
   readonly: boolean;
   recipe_type: string;
+  vegetarian?: boolean;
+  vegan?: boolean;
   users: userType[];
 };
 
@@ -86,7 +88,21 @@ function RecipeCard({ recipes }: RecipeProps) {
               quality={70}
             ></Image>
           ) : null}
-          <h2 className="text-2xl my-5">{recipe.name}</h2>
+          <h2 className="text-2xl my-5">
+            <span>
+              {recipe.name}{" "}
+              {recipe.vegetarian ? (
+                <Image
+                  alt="vegetarian"
+                  title="vegetarian"
+                  height="15"
+                  width="15"
+                  className="inline"
+                  src="https://qhlvgfbmjzraangtbtqq.supabase.co/storage/v1/object/public/recipeimages/veg.png"
+                ></Image>
+              ) : null}
+            </span>
+          </h2>
           <h3 className="text-lg text-ellipsis mb-8 capitalize">
             <span className="font-semibold">Ingredients:</span>{" "}
             {recipe.ingredients}
@@ -122,14 +138,14 @@ function RecipeCard({ recipes }: RecipeProps) {
               <span>
                 {recipe.calories}
                 {recipe.calories_per ? (
-                  <span>kcal for {recipe.calories_per}</span>
+                  <span>kcal per {recipe.calories_per}</span>
                 ) : null}
               </span>
             </h6>
           ) : null}
           {recipe.serves ? (
             <p className="text-base mb-2">
-              <span className="font-semibold">Serves:</span>
+              <span className="font-semibold">Serves: </span>
               {recipe.serves}
             </p>
           ) : null}

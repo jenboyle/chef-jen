@@ -35,7 +35,7 @@ function CalculatePoints() {
     <div className="my-8 grid col-span-1">
       <label className="p-1 font-semibold">Calories:</label>
       <input
-        type="text"
+        type="number"
         name="cal"
         placeholder="Enter calories"
         onChange={handleCals}
@@ -43,7 +43,7 @@ function CalculatePoints() {
       ></input>
       <label className="p-1 font-semibold">Saturated Fat:</label>
       <input
-        type="text"
+        type="number"
         name="satfat"
         placeholder="Enter saturated fat"
         onChange={handleSatFat}
