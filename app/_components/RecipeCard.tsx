@@ -3,6 +3,8 @@ import Image from "next/image";
 import RecipeCardTools from "./RecipeCardTools";
 import { ChangeEvent, useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import RecipeCardTitle from "./RecipeCardTitle";
+import RecipeCardIngredients from "./RecipeCardIngredients";
 
 export type userType = {
   username: string;
@@ -21,7 +23,7 @@ export type recipeType = {
   serves?: number;
   readonly: boolean;
   recipe_type: string;
-  vegetarian?: boolean;
+  vegetarian: boolean;
   vegan?: boolean;
   users: userType[];
 };
@@ -87,25 +89,11 @@ function RecipeCard({ recipes }: RecipeProps) {
               quality={70}
             ></Image>
           ) : null}
-          <h2 className="text-2xl my-5">
-            <span>
-              {recipe.name}{" "}
-              {recipe.vegetarian ? (
-                <Image
-                  alt="vegetarian"
-                  title="vegetarian"
-                  height="15"
-                  width="15"
-                  className="inline"
-                  src="https://qhlvgfbmjzraangtbtqq.supabase.co/storage/v1/object/public/recipeimages/veg.png"
-                ></Image>
-              ) : null}
-            </span>
-          </h2>
-          <h3 className="text-lg text-ellipsis mb-8 capitalize">
-            <span className="font-semibold">Ingredients:</span>{" "}
-            {recipe.ingredients}
-          </h3>
+          <RecipeCardTitle
+            recipeName={recipe.name}
+            vegetarian={recipe.vegetarian}
+          />
+          <RecipeCardIngredients ingredients={recipe.ingredients} />
           <h4 className="text-lg mb-8">
             <span className="font-semibold">Method:</span> {recipe.method}
           </h4>
