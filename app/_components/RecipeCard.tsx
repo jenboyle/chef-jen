@@ -37,9 +37,9 @@ interface RecipeProps {
 function RecipeCard({ recipes }: RecipeProps) {
   const [recipesFiltered, setRecipesFiltered] = useState(recipes);
   useEffect(() => {
-    if (recipes[0].recipe_type === "desserts") {
-      toast("New recipe coming soon: Spider🕷️ Biscuits", {
-        id: "dessertscomesoon",
+    if (recipes[0].recipe_type === "starters") {
+      toast("More recipes coming soon!", {
+        id: "newrecipes",
       });
     }
   }, [recipes]);
