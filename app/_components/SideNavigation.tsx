@@ -1,9 +1,12 @@
+"use client";
 import ChefNavLink from "./ChefNavLink";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import PersonIcon from "@mui/icons-material/Person";
 import PinIcon from "@mui/icons-material/Pin";
+import { useUser } from "./authentication/useUser";
 
 function SideNavigation() {
+  const { user } = useUser();
   return (
     <div className="row-span-full bg-emerald-200 border-r-2 shadow-md">
       <ul>
@@ -18,9 +21,15 @@ function SideNavigation() {
           </ChefNavLink>
         </li>
         <li className="px-6 py-8">
-          <ChefNavLink href="/login">
-            <PersonIcon /> Login
-          </ChefNavLink>
+          {user ? (
+            <ChefNavLink href="/logout">
+              <PersonIcon /> Logout
+            </ChefNavLink>
+          ) : (
+            <ChefNavLink href="/login">
+              <PersonIcon /> Login
+            </ChefNavLink>
+          )}
         </li>
       </ul>
     </div>
