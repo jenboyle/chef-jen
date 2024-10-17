@@ -24,7 +24,7 @@ function HomeContent() {
         With these easy meals you can plan your next meal and good preparation
         is 🔑 to keeping the diet on track!
       </ChefArticle>
-      <div className="text-center p-10">
+      <div className="text-center p-10 animate-bounceshort">
         <ChefButtonLink href="/starters">Cook 👩🏼‍🍳</ChefButtonLink>
       </div>
     </>

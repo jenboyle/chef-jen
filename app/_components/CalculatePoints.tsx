@@ -9,7 +9,7 @@ import { getPoints } from "../public/getPoints";
 function CalculatePoints() {
   const [cal, setCal] = useState(20);
   const [satfat, setSatfat] = useState(0);
-  const [points, setPoints] = useState(0);
+  const [points, setPoints] = useState(0.5);
 
   function handleCals(e: React.ChangeEvent<HTMLSelectElement>) {
     setCal(Number(e.target.value));
@@ -70,8 +70,13 @@ function CalculatePoints() {
           Calculate Points
         </ChefButton>
       </div>
-      <div className="text-center p-8">
-        <label className="p-1 ">Points: {points}</label>
+      <div className="text-center p-8 text-emerald-800 font-semibold">
+        <label className="p-1">
+          Points:{" "}
+          <span className="bg-emerald-400 bg-opacity-5 text-black rounded-md p-3">
+            {points}
+          </span>
+        </label>
       </div>
     </div>
   );
