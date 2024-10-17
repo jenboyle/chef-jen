@@ -1,22 +1,21 @@
 "use client";
 import { useState } from "react";
 import ChefButton from "./ChefButton";
+import { wwcal } from "../public/wwcal";
+import { wwsatfat } from "../public/wwsatfat";
+//import { wwpoints } from "../public/wwpoints";
+import { getPoints } from "../public/getPoints";
 
 function CalculatePoints() {
-  const [cal, setCal] = useState(0);
+  const [cal, setCal] = useState(20);
   const [satfat, setSatfat] = useState(0);
   const [points, setPoints] = useState(0);
-  function handleClick() {
-    let pointsCalc = cal / 50 + satfat / 12;
-    pointsCalc = Math.round(pointsCalc * 2) / 2;
-    setPoints(pointsCalc);
-  }
 
-  function handleCals(e: React.ChangeEvent<HTMLInputElement>) {
+  function handleCals(e: React.ChangeEvent<HTMLSelectElement>) {
     setCal(Number(e.target.value));
   }
 
-  function handleSatFat(e: React.ChangeEvent<HTMLInputElement>) {
+  function handleSatFat(e: React.ChangeEvent<HTMLSelectElement>) {
     setSatfat(Number(e.target.value));
   }
 
@@ -31,26 +30,45 @@ function CalculatePoints() {
   //         ></input>
   //       </div>
 
+  // <ChefButton
+  //         handleClick={() => {
+  //           console.log(getPoints(cal, satfat));
+  //           wwpoints.map((wwpoint) =>
+  //             Number(wwpoint.cal) === cal
+  //               ? Number(wwpoint.satfat) === satfat
+  //                 ? setPoints(Number(wwpoint.points))
+  //                 : null
+  //               : null
+  //           );
+  //         }}
+  //       ></ChefButton>
+
   return (
     <div className="my-8 grid col-span-1">
       <label className="p-1 font-semibold">Calories:</label>
-      <input
-        type="number"
-        name="cal"
-        placeholder="Enter calories"
-        onChange={handleCals}
-        className="p-2 m-2 font-semibold rounded-xl focus:outline-none hover:bg-blue-50 transition-colors duration-300 focus:ring focus:ring-emerald-300 focus:bg-blue-50 focus:ring-offset-2"
-      ></input>
+      <select defaultValue={cal} onChange={handleCals}>
+        {wwcal.map((wwcaldata) => (
+          <option key={wwcaldata.cal} value={wwcaldata.cal}>
+            {wwcaldata.cal}
+          </option>
+        ))}
+      </select>
       <label className="p-1 font-semibold">Saturated Fat:</label>
-      <input
-        type="number"
-        name="satfat"
-        placeholder="Enter saturated fat"
-        onChange={handleSatFat}
-        className="p-2 m-2 font-semibold rounded-xl focus:outline-none hover:bg-blue-50 transition-colors duration-300 focus:ring focus:ring-emerald-300 focus:bg-blue-50 focus:ring-offset-2"
-      ></input>
+      <select defaultValue={satfat} onChange={handleSatFat}>
+        {wwsatfat.map((wwsatfatdata) => (
+          <option key={wwsatfatdata.satfat} value={wwsatfatdata.satfat}>
+            {wwsatfatdata.satfat}
+          </option>
+        ))}
+      </select>
       <div className="text-center p-10">
-        <ChefButton handleClick={handleClick}>Calculate Points</ChefButton>
+        <ChefButton
+          handleClick={() => {
+            setPoints(getPoints(cal, satfat));
+          }}
+        >
+          Calculate Points
+        </ChefButton>
       </div>
       <div className="text-center p-8">
         <label className="p-1 ">Points: {points}</label>
