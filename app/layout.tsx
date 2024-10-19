@@ -6,6 +6,8 @@ import SideNavigation from "./_components/SideNavigation";
 import { Toaster } from "react-hot-toast";
 import Store from "./store";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: {
     template: "Chef Jen 👩🏼‍🍳 - %s",

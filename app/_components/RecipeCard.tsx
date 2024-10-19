@@ -5,6 +5,10 @@ import { ChangeEvent, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import RecipeCardTitle from "./RecipeCardTitle";
 import RecipeCardIngredients from "./RecipeCardIngredients";
+import PostAddIcon from "@mui/icons-material/PostAdd";
+import { IconButton, Tooltip } from "@mui/material";
+import { useUser } from "./authentication/useUser";
+import AddRecipe from "./AddRecipe";
 
 export type userType = {
   username: string;
@@ -36,6 +40,9 @@ interface RecipeProps {
 
 function RecipeCard({ recipes }: RecipeProps) {
   const [recipesFiltered, setRecipesFiltered] = useState(recipes);
+  const { isAuthenticated } = useUser();
+  const [openAddRecipe, setOpenAddRecipe] = useState(false);
+
   useEffect(() => {
     if (recipes[0].recipe_type === "starters") {
       toast("More recipes coming soon!", {
@@ -43,6 +50,14 @@ function RecipeCard({ recipes }: RecipeProps) {
       });
     }
   }, [recipes]);
+
+  function handleToggleAddRecipe() {
+    setOpenAddRecipe(!openAddRecipe);
+  }
+
+  function handleCloseAddRecipe() {
+    setOpenAddRecipe(false);
+  }
 
   function handleSearch(e: ChangeEvent<HTMLInputElement>) {
     if (e.target.value.length > 2) {
@@ -67,6 +82,19 @@ function RecipeCard({ recipes }: RecipeProps) {
   return (
     <>
       <div className="text-right mr-4">
+        <Tooltip title="Add Recipe">
+          <span>
+            <IconButton
+              disabled={!isAuthenticated}
+              onClick={handleToggleAddRecipe}
+            >
+              <PostAddIcon />
+            </IconButton>
+          </span>
+        </Tooltip>
+        {openAddRecipe ? (
+          <AddRecipe open={openAddRecipe} onClose={handleCloseAddRecipe} />
+        ) : null}
         <input
           type="text"
           name="search"
@@ -142,7 +170,7 @@ function RecipeCard({ recipes }: RecipeProps) {
               {(recipe.users as unknown as userType)!.username}
             </p>
           ) : null}
-          <RecipeCardTools isDisabled={recipe.readonly} />
+          <RecipeCardTools isDisabled={!isAuthenticated || recipe.readonly} />
         </div>
       ))}
     </>
