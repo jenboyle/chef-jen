@@ -70,10 +70,10 @@ function CalculatePoints() {
           Calculate Points
         </ChefButton>
       </div>
-      <div className="text-center p-8 text-emerald-800 font-semibold">
+      <div className="text-center p-8 text-yellow-600 font-semibold">
         <label className="p-1">
           Points:{" "}
-          <span className="bg-emerald-400 bg-opacity-5 text-black rounded-md p-3">
+          <span className="bg-yellow-300 bg-opacity-5 text-black rounded-md p-3">
             {points}
           </span>
         </label>

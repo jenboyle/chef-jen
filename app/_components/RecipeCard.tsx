@@ -100,12 +100,12 @@ function RecipeCard({ recipes }: RecipeProps) {
           name="search"
           placeholder="🔍 Search..."
           onChange={handleSearch}
-          className="p-2 m-2 font-semibold rounded-xl focus:outline-none hover:bg-blue-50 transition-colors duration-300 focus:ring focus:ring-emerald-300 focus:bg-blue-50 focus:ring-offset-2"
+          className="p-2 m-2 font-semibold rounded-xl focus:outline-none hover:bg-blue-50 transition-colors duration-200 focus:ring focus:ring-yellow-200 focus:bg-blue-50 focus:ring-offset-2"
         ></input>
       </div>
       {recipesFiltered.map((recipe, index) => (
         <div
-          className="bg-emerald-50 p-2 m-4 border border-stone-300 relative"
+          className="bg-yellow-50 p-2 m-4 border border-stone-300 relative"
           key={`${index} ${recipe.name}`}
         >
           {recipe.bg_img ? (

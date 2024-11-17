@@ -7,7 +7,7 @@ export interface navProps {
 
 function ChefNavLink({ href, children }: navProps) {
   return (
-    <Link href={href} className="hover:bg-emerald-500">
+    <Link href={href} className="hover:bg-yellow-400">
       {children}
     </Link>
   );

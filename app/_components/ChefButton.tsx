@@ -9,7 +9,7 @@ function ChefButton({ handleClick, children }: buttonProps) {
   return (
     <button
       onClick={handleClick}
-      className="bg-emerald-200 p-4 rounded-2xl text-xl hover:bg-emerald-500"
+      className="bg-yellow-100 p-4 rounded-2xl text-xl hover:bg-yellow-400"
     >
       {children}
     </button>

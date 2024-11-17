@@ -8,7 +8,7 @@ import { useUser } from "./authentication/useUser";
 function SideNavigation() {
   const { user } = useUser();
   return (
-    <div className="row-span-full bg-emerald-200 border-r-2 shadow-md">
+    <div className="row-span-full bg-yellow-100 border-r-2 shadow-md">
       <ul>
         <li className="px-6 py-8">
           <ChefNavLink href="/">

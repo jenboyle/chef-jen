@@ -22,6 +22,9 @@ const opensans = Open_Sans({
   display: "swap",
 });
 
+const mysvg =
+  "https://qhlvgfbmjzraangtbtqq.supabase.co/storage/v1/object/public/recipeimages/carrots.svg";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -30,9 +33,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${opensans.className} bg-green-100 text-stone-800 flex flex-col min-h-screen`}
+        className={`${opensans.className} text-stone-800 flex flex-col min-h-screen`}
+        style={{
+          backgroundImage: `linear-gradient(rgba(240, 252, 231, 0.85), rgba(254, 249, 305, 0.8)), url(${mysvg})`,
+        }}
       >
-        {" "}
         <Store>
           <Header />
           <Toaster position="top-center" gutter={12} />

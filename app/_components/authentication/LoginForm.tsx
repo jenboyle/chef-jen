@@ -35,7 +35,7 @@ function LoginForm() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter your email"
-        className="p-2 m-2 font-semibold rounded-xl focus:outline-none hover:bg-blue-50 transition-colors duration-300 focus:ring focus:ring-emerald-300 focus:bg-blue-50 focus:ring-offset-2"
+        className="p-2 m-2 font-semibold rounded-xl focus:outline-none hover:bg-blue-50 transition-colors duration-200 focus:ring focus:ring-yellow-200 focus:bg-blue-50 focus:ring-offset-2"
       ></input>
       <input
         type="password"
@@ -45,12 +45,12 @@ function LoginForm() {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Enter your password"
-        className="p-2 m-2 font-semibold rounded-xl focus:outline-none hover:bg-blue-50 transition-colors duration-300 focus:ring focus:ring-emerald-300 focus:bg-blue-50 focus:ring-offset-2"
+        className="p-2 m-2 font-semibold rounded-xl focus:outline-none hover:bg-blue-50 transition-colors duration-200 focus:ring focus:ring-yellow-200 focus:bg-blue-50 focus:ring-offset-2"
       ></input>
       <button
         type="submit"
         disabled={isLoading}
-        className="bg-emerald-200 p-4 rounded-2xl text-xl hover:bg-emerald-500"
+        className="bg-yellow-100 p-4 rounded-2xl text-xl hover:bg-yellow-400"
       >
         Login 👩🏼‍🍳
       </button>
