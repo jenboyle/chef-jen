@@ -4,7 +4,7 @@ import RecipeCard from "../_components/RecipeCard";
 import { getRecipes } from "../_lib/data-service";
 
 export const metadata: Metadata = {
-  title: "Desserts",
+  title: "Dessert",
 };
 
 // const fakeDesserts = [
@@ -47,10 +47,10 @@ export const metadata: Metadata = {
 // },
 
 async function Page() {
-  const recipes = await getRecipes("desserts");
+  const recipes = await getRecipes("dessert");
   return (
     <>
-      <ChefTitle>Desserts 🍧</ChefTitle>
+      <ChefTitle>Dessert 🍧</ChefTitle>
       <RecipeCard recipes={recipes} />
     </>
   );

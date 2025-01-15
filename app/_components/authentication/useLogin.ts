@@ -21,7 +21,7 @@ export function useLogin() {
     onSuccess: (user) => {
       //console.log(user);
       queryClient.setQueryData(["user"], user.user);
-      router.replace("/starters");
+      router.replace("/main");
     },
     onError: (err) => {
       console.log("error", err);

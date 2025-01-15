@@ -44,7 +44,7 @@ function RecipeCard({ recipes }: RecipeProps) {
   const [openAddRecipe, setOpenAddRecipe] = useState(false);
 
   useEffect(() => {
-    if (recipes[0].recipe_type === "starters") {
+    if (recipes[0].recipe_type === "main") {
       toast("More recipes coming soon!", {
         id: "newrecipes",
       });

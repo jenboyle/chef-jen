@@ -1,7 +1,6 @@
 import DinnerDiningIcon from "@mui/icons-material/DinnerDining";
 import LunchDiningIcon from "@mui/icons-material/LunchDining";
 import IcecreamIcon from "@mui/icons-material/Icecream";
-import SoupKitchenIcon from "@mui/icons-material/SoupKitchen";
 import ChefNavLink from "./ChefNavLink";
 
 function Navigation() {
@@ -11,27 +10,21 @@ function Navigation() {
       className="bg-yellow-100 border-b-2 shadow-md z-50 fixed w-full flex justify-between items-center text-sm px-1 p-2 md:px-3 md:p-4"
     >
       <li className="mx-4">
-        <ChefNavLink href="/starters">
-          <SoupKitchenIcon />
-          Starters
-        </ChefNavLink>
-      </li>
-      <li className="mx-4">
         <ChefNavLink href="/lunch">
           <LunchDiningIcon />
           Lunch
         </ChefNavLink>
       </li>
       <li className="mx-4">
-        <ChefNavLink href="/mains">
+        <ChefNavLink href="/main">
           <DinnerDiningIcon />
-          Mains
+          Main
         </ChefNavLink>
       </li>
       <li className="mx-4">
-        <ChefNavLink href="/desserts">
+        <ChefNavLink href="/dessert">
           <IcecreamIcon />
-          Desserts
+          Dessert
         </ChefNavLink>
       </li>
     </ul>
