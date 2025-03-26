@@ -1,3 +1,4 @@
+"use client";
 import DinnerDiningIcon from "@mui/icons-material/DinnerDining";
 import LunchDiningIcon from "@mui/icons-material/LunchDining";
 import IcecreamIcon from "@mui/icons-material/Icecream";
