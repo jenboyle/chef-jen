@@ -125,13 +125,13 @@ function RecipeCard({ recipes }: RecipeProps) {
           <h4 className="text-lg mb-8">
             <span className="font-semibold">Method:</span> {recipe.method}
           </h4>
-          <div className="relative h-[130px] w-[280px] md:h-[250px] md:w-auto">
+          <div className="w-full relative h-auto">
             {recipe.img ? (
               <Image
                 src={recipe.img}
-                className="object-contain border-4 border-stone-50"
-                fill
+                className="w-4/5 max-w-2xl h-auto !relative"
                 alt={recipe.name}
+                fill
                 quality={90}
               ></Image>
             ) : null}
