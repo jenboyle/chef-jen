@@ -3,20 +3,18 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import FormControl from "@mui/material/FormControl";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import FormLabel from "@mui/material/FormLabel";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import Typography from "@mui/material/Typography";
 import StonePicker from "./StonePicker";
 import { useState } from "react";
+import AllowanceLabel from "./AllowanceLabel";
 
 function CalculateDailyAllowance() {
   const [genderVal, setGenderVal] = useState(3);
   const [feedingVal, setFeedingVal] = useState(0);
   const [ageVal, setAgeVal] = useState(3);
-
   const [stonesVal, setStonesVal] = useState(9);
-
   const [heightVal, setHeightVal] = useState(1);
   const [activeVal, setActiveVal] = useState(0);
 
@@ -31,9 +29,7 @@ function CalculateDailyAllowance() {
         </Typography>
         <Card sx={{ minWidth: 150, margin: 5 }}>
           <FormControl>
-            <FormLabel id="gender-label" sx={{ padding: 1 }}>
-              Are you
-            </FormLabel>
+            <AllowanceLabel>Are you</AllowanceLabel>
             <RadioGroup
               aria-labelledby="gender-rg-label"
               defaultValue="3"
@@ -49,9 +45,7 @@ function CalculateDailyAllowance() {
 
         <Card sx={{ minWidth: 150, margin: 5 }}>
           <FormControl>
-            <FormLabel id="feeding-label" sx={{ padding: 1 }}>
-              Are you breastfeeding
-            </FormLabel>
+            <AllowanceLabel>Are you breastfeeding</AllowanceLabel>
             <RadioGroup
               aria-labelledby="feeding-rg-label"
               defaultValue="0"
@@ -76,9 +70,7 @@ function CalculateDailyAllowance() {
 
         <Card sx={{ minWidth: 150, margin: 5 }}>
           <FormControl>
-            <FormLabel id="age-label" sx={{ padding: 1 }}>
-              Your age bracket
-            </FormLabel>
+            <AllowanceLabel>Your age bracket</AllowanceLabel>
             <RadioGroup
               aria-labelledby="age-rg-label"
               defaultValue="3"
@@ -98,18 +90,16 @@ function CalculateDailyAllowance() {
 
         <Card sx={{ minWidth: 150, margin: 5 }}>
           <FormControl>
-            <FormLabel id="stones-label" sx={{ padding: 1 }}>
-              Your weight in stones, ignore pounds{" "}
-            </FormLabel>
+            <AllowanceLabel>
+              Your weight in stones, ignore pounds
+            </AllowanceLabel>
             <StonePicker stones={stonesVal} handle={setStonesVal} />
           </FormControl>
         </Card>
 
         <Card sx={{ minWidth: 150, margin: 5 }}>
           <FormControl>
-            <FormLabel id="height-label" sx={{ padding: 1 }}>
-              Your height
-            </FormLabel>
+            <AllowanceLabel>Your height</AllowanceLabel>
             <RadioGroup
               aria-labelledby="height-rg-label"
               defaultValue="1"
@@ -133,9 +123,7 @@ function CalculateDailyAllowance() {
 
         <Card sx={{ minWidth: 150, margin: 5 }}>
           <FormControl>
-            <FormLabel id="active-label" sx={{ padding: 1 }}>
-              Do you spend most of your time
-            </FormLabel>
+            <AllowanceLabel>Do you spend most of your time</AllowanceLabel>
             <RadioGroup
               aria-labelledby="active-rg-label"
               defaultValue="0"
