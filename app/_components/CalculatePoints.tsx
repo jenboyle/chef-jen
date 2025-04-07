@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import ChefButton from "./ChefButton";
 import { wwcal } from "../public/wwcal";
 import { wwsatfat } from "../public/wwsatfat";
 //import { wwpoints } from "../public/wwpoints";
@@ -13,10 +12,12 @@ function CalculatePoints() {
 
   function handleCals(e: React.ChangeEvent<HTMLSelectElement>) {
     setCal(Number(e.target.value));
+    setPoints(getPoints(Number(e.target.value), satfat));
   }
 
   function handleSatFat(e: React.ChangeEvent<HTMLSelectElement>) {
     setSatfat(Number(e.target.value));
+    setPoints(getPoints(cal, Number(e.target.value)));
   }
 
   //   <div className="justify-center text-center p-10">
@@ -61,16 +62,7 @@ function CalculatePoints() {
           </option>
         ))}
       </select>
-      <div className="text-center p-10">
-        <ChefButton
-          handleClick={() => {
-            setPoints(getPoints(cal, satfat));
-          }}
-        >
-          Calculate Points
-        </ChefButton>
-      </div>
-      <div className="text-center p-8 text-yellow-600 font-semibold">
+      <div className="text-center p-10 text-yellow-600 font-semibold">
         <label className="p-1">
           Points:{" "}
           <span className="bg-yellow-300 bg-opacity-5 text-black rounded-md p-3">
