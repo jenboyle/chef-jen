@@ -159,10 +159,18 @@ function CalculateDailyAllowance() {
           </FormControl>
         </Card>
 
-        <Card sx={{ minWidth: 150, margin: 5 }}>
+        <Card
+          sx={{
+            minWidth: 150,
+            margin: 5,
+            background:
+              "linear-gradient(0deg, rgba(242,238,153,1) 16%, rgba(230,235,194,1) 87%)",
+          }}
+        >
           <CardContent>
             <Typography variant="h5" component="div">
-              My Daily Ww Old 🏫 Points Allowance is {dailyAllowance}
+              My Daily Ww Old 🏫 Points Allowance is{" "}
+              <strong>{dailyAllowance}</strong>
             </Typography>
             <Typography
               variant="h6"
