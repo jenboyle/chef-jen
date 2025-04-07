@@ -20,9 +20,6 @@ export default function StonePicker({ stones, handle }: StonePickerProps) {
       onValueChange={(val) => handle(Number(val))}
     >
       <NumberField.ScrubArea className={styles.ScrubArea}>
-        <label htmlFor={id} className={styles.Label}>
-          Amount
-        </label>
         <NumberField.ScrubAreaCursor className={styles.ScrubAreaCursor}>
           <CursorGrowIcon />
         </NumberField.ScrubAreaCursor>

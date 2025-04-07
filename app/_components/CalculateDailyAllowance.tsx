@@ -31,11 +31,14 @@ function CalculateDailyAllowance() {
         </Typography>
         <Card sx={{ minWidth: 150, margin: 5 }}>
           <FormControl>
-            <FormLabel id="gender-label">Are you</FormLabel>
+            <FormLabel id="gender-label" sx={{ padding: 1 }}>
+              Are you
+            </FormLabel>
             <RadioGroup
               aria-labelledby="gender-rg-label"
               defaultValue="3"
               name="gender"
+              sx={{ marginLeft: 1 }}
               onChange={(e) => setGenderVal(Number(e.target.value))}
             >
               <FormControlLabel value="3" control={<Radio />} label="Female" />
@@ -46,11 +49,14 @@ function CalculateDailyAllowance() {
 
         <Card sx={{ minWidth: 150, margin: 5 }}>
           <FormControl>
-            <FormLabel id="feeding-label">Are you breastfeeding</FormLabel>
+            <FormLabel id="feeding-label" sx={{ padding: 1 }}>
+              Are you breastfeeding
+            </FormLabel>
             <RadioGroup
               aria-labelledby="feeding-rg-label"
               defaultValue="0"
               name="feeding"
+              sx={{ marginLeft: 1 }}
               onChange={(e) => setFeedingVal(Number(e.target.value))}
             >
               <FormControlLabel value="0" control={<Radio />} label="No" />
@@ -70,14 +76,16 @@ function CalculateDailyAllowance() {
 
         <Card sx={{ minWidth: 150, margin: 5 }}>
           <FormControl>
-            <FormLabel id="age-label">How old are you</FormLabel>
+            <FormLabel id="age-label" sx={{ padding: 1 }}>
+              Your age bracket
+            </FormLabel>
             <RadioGroup
               aria-labelledby="age-rg-label"
               defaultValue="3"
               name="age"
+              sx={{ marginLeft: 1 }}
               onChange={(e) => setAgeVal(Number(e.target.value))}
             >
-              <FormControlLabel value="0" control={<Radio />} label="No" />
               <FormControlLabel value="5" control={<Radio />} label="16-20" />
               <FormControlLabel value="4" control={<Radio />} label="21-35" />
 
@@ -90,7 +98,7 @@ function CalculateDailyAllowance() {
 
         <Card sx={{ minWidth: 150, margin: 5 }}>
           <FormControl>
-            <FormLabel id="stones-label">
+            <FormLabel id="stones-label" sx={{ padding: 1 }}>
               Your weight in stones, ignore pounds{" "}
             </FormLabel>
             <StonePicker stones={stonesVal} handle={setStonesVal} />
@@ -99,11 +107,14 @@ function CalculateDailyAllowance() {
 
         <Card sx={{ minWidth: 150, margin: 5 }}>
           <FormControl>
-            <FormLabel id="height-label">Your height</FormLabel>
+            <FormLabel id="height-label" sx={{ padding: 1 }}>
+              Your height
+            </FormLabel>
             <RadioGroup
               aria-labelledby="height-rg-label"
               defaultValue="1"
               name="height"
+              sx={{ marginLeft: 1 }}
               onChange={(e) => setHeightVal(Number(e.target.value))}
             >
               <FormControlLabel
@@ -122,13 +133,14 @@ function CalculateDailyAllowance() {
 
         <Card sx={{ minWidth: 150, margin: 5 }}>
           <FormControl>
-            <FormLabel id="active-label">
+            <FormLabel id="active-label" sx={{ padding: 1 }}>
               Do you spend most of your time
             </FormLabel>
             <RadioGroup
               aria-labelledby="active-rg-label"
               defaultValue="0"
               name="active"
+              sx={{ marginLeft: 1 }}
               onChange={(e) => setActiveVal(Number(e.target.value))}
             >
               <FormControlLabel value="0" control={<Radio />} label="Sitting" />
@@ -141,7 +153,7 @@ function CalculateDailyAllowance() {
               <FormControlLabel
                 value="6"
                 control={<Radio />}
-                label="Physical Hard work"
+                label="Physical Hard Work"
               />
             </RadioGroup>
           </FormControl>
@@ -151,6 +163,15 @@ function CalculateDailyAllowance() {
           <CardContent>
             <Typography variant="h5" component="div">
               My Daily Ww Old 🏫 Points Allowance is {dailyAllowance}
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{ color: "text.secondary", fontSize: 14 }}
+              component="div"
+            >
+              Calculate your points allowance again when: your weight changes
+              stone OR you change age bracket OR you change daily activity OR
+              you begin or stop breastfeeding
             </Typography>
           </CardContent>
         </Card>
