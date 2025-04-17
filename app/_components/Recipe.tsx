@@ -45,7 +45,7 @@ function Recipe({ recipe, index, isAuthenticated }: RecipeProps) {
           ></Image>
         ) : null}
       </div>
-      {recipe.points ? (
+      {recipe.points || recipe.points == 0 ? (
         <h5 className="text-base my-2">
           <span className="font-semibold">Ww old 🏫 points: </span>
           <span>

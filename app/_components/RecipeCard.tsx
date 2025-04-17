@@ -44,7 +44,7 @@ function RecipeCard({ recipes }: RecipeProps) {
   const [showVeg, setShowVeg] = useState(false);
 
   useEffect(() => {
-    if (recipes[0].recipe_type === "main") {
+    if (recipes[0] && recipes[0].recipe_type === "main") {
       toast("More recipes coming soon!", {
         id: "newrecipes",
       });
@@ -65,7 +65,6 @@ function RecipeCard({ recipes }: RecipeProps) {
 
   function handleSearch(e: ChangeEvent<HTMLInputElement>) {
     if (e.target.value.length > 2) {
-      console.log("perform filter");
       setRecipesFiltered(
         recipes.filter(
           (recipe) =>

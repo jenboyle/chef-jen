@@ -1,5 +1,6 @@
 "use client";
 import ChefNavLink from "./ChefNavLink";
+import CookieIcon from "@mui/icons-material/Cookie";
 import SensorOccupiedIcon from "@mui/icons-material/SensorOccupied";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import PersonIcon from "@mui/icons-material/Person";
@@ -24,6 +25,11 @@ function SideNavigation() {
         <li className="px-6 py-8">
           <ChefNavLink href="/points">
             <PinIcon /> Points
+          </ChefNavLink>
+        </li>
+        <li className="px-6 py-8">
+          <ChefNavLink href="/snack">
+            <CookieIcon /> Snack
           </ChefNavLink>
         </li>
         <li className="px-6 py-8">
