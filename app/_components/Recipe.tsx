@@ -31,9 +31,12 @@ function Recipe({ recipe, index, isAuthenticated }: RecipeProps) {
         vegetarian={recipe.vegetarian}
       />
       <RecipeCardIngredients ingredients={recipe.ingredients} />
-      <h4 className="text-lg mb-8">
-        <span className="font-semibold">Method:</span> {recipe.method}
-      </h4>
+      {recipe.method != "-" ? (
+        <h4 className="text-lg mb-8">
+          <span className="font-semibold">Method:</span> {recipe.method}
+        </h4>
+      ) : null}
+
       <div className="w-full relative h-auto">
         {recipe.img ? (
           <Image
